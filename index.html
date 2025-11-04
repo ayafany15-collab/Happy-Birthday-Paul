@@ -237,17 +237,17 @@
 
             <!-- Step 5: Final Wish -->
             <div class="step" id="step5">
-                <div class="emoji">🎂</div>
+                <div class="emoji">🎊</div>
                 <h2 class="text-3xl md:text-4xl font-bold mb-6 text-gradient">My Birthday Wish For You</h2>
                 <p class="text-lg text-gray-700 mb-8">
                     May your year be filled with joy, laughter, and dreams come true. May you always know how special
                     you are to me and to everyone lucky enough to know you.
                 </p>
-                <p class="text-xl font-semibold text-pink-600 mb-8">
-                    Happy Birthday, my crush! ❤️
+                <p class="text-xl font-semibold text-blue-600 mb-8">
+                    Happy Birthday, My Love! ♡
                 </p>
                 <button class="btn" id="confetti-btn">Celebrate!</button>
-                <p class="mt-8 text-gray-500">Made with ❤️ just for you</p>
+                <p class="mt-8 text-gray-500">Hecho Con ♡ Solo Para Ti</p>
             </div>
         </div>
     </div>
@@ -287,14 +287,14 @@
         // Create multiple hearts with different colors and properties
         const hearts = [];
         const colors = [
-            0xff6b6b, 0xff8e8e, 0xffb3b3, 0xffd8d8,
-            0xff9e9e, 0xffc1c1, 0xff6b8e, 0xff8eb3
+            0x000000, 0xa7abac, 0xe7eef0, 0x0e62f4,
+            0x9fa6a6, 0x5793fa, 0xd2d7da, 0x494d4e
         ];
 
         for (let i = 0; i < 25; i++) {
             const material = new THREE.MeshPhongMaterial({
                 color: colors[Math.floor(Math.random() * colors.length)],
-                emissive: 0xff0000,
+                emissive: 0xffffff,
                 emissiveIntensity: 0.1,
                 shininess: 100,
                 transparent: true,
@@ -434,7 +434,7 @@
                     spread: 60,
                     origin: { y: 0.5 },
                     shapes: ['heart'],
-                    colors: ['#ff0000', '#ff69b4']
+                    colors: ['#000000', '#a7abac']
                 });
             }, 300);
 
@@ -446,7 +446,7 @@
                     spread: 55,
                     origin: { x: 0 },
                     shapes: ['heart'],
-                    colors: ['#ff0000', '#ff69b4']
+                    colors: ['#ffffff', '#0e62f4']
                 });
 
                 confetti({
@@ -482,4 +482,5 @@
 
 
 </html>
+
 
