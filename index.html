@@ -5,6 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Para Mi Amor ♡</title>
+</head>
+    <body>
+        <div id="splash" onclick="start()">
+        &#127929; Click to Start!
+        </div>
+
+        <audio src="Die For You.mp3" loop></audio>
+        
+        </body>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
@@ -17,9 +26,6 @@
             height: 100vh;
             touch-action: manipulation;
             background: linear-gradient(135deg, #000000, #eaeaea);
-            <audio autoplay loop>
-            <source src="Die For You.mp3" type="audio/mpeg">
-            </audio>
         }
 
         #app {
@@ -396,6 +402,19 @@
             if (stepNumber === totalSteps) {
                 document.getElementById('confetti-btn').classList.add('animate-pulse');
             }
+
+            function start (){
+                //GET SPLASH SCREEN
+                let splash = document.getElementByID("splash");
+
+                //PLAY BGM//
+                splash.addEventlistener("transtioned", () => {
+                    document.getElementByID("Die For You.mp3").play();
+                    splash.remove();
+                });
+                
+                //HIDE
+                splash.classlist.add("hide");
         }
 
         // Button event listeners
@@ -476,7 +495,33 @@
                 });
             });
         });
+            
+/* SPLASH SCREEN */
+#splash {
+  /* (A1) FULLSCREEN */
+  position: fixed; top: 0; left: 0; z-index: 999;
+  width: 100vw; height: 100vh;
 
+  /* (A2) CENTER */
+  display: flex;
+  align-items: center; justify-content: center;
+
+  /* (A3) COSMETICS */
+  font-size: 24px;
+  color: #fff; background: #000;
+}
+
+/* (A4) TO HIDE THE SPLASH SCREEN */
+#splash.hide {
+  opacity: 0; visibility: hidden;
+  transition: all 1s;
+}
+
+/* NOT IMPORTANT - COSMETICS */
+* {
+  font-family: Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
+}
         // Initialize progress bar
         updateProgressBar();
     </script>
@@ -484,6 +529,7 @@
 
 
 </html>
+
 
 
 
